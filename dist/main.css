@@ -27,6 +27,9 @@ body {
   min-height: 100vh;
 }
 
+/*
+  main container
+*/
 main {
   max-width: 1440px;
   min-width: 375px;
@@ -36,4 +39,95 @@ main {
   background: url(../images/pattern-bg.svg) no-repeat;
   background-size: 100%;
   background-position: center top 17%;
+  /*
+      avatar container
+  */
+  /*
+    block quote
+  */
+}
+main .avatar-contianer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 54px;
+  position: relative;
+  margin-bottom: 52px;
+  /*
+    avatar img
+  */
+  /*
+    slider-btns-container
+  */
+}
+main .avatar-contianer::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+main .avatar-contianer .arrow-btns-container {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  width: 80px;
+  height: 40px;
+  border-radius: 28px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+          box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  /*
+    left arrow & right arrow
+  */
+}
+main .avatar-contianer .arrow-btns-container .left-arrow,
+main .avatar-contianer .arrow-btns-container .right-arrow {
+  width: 50%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+main .avatar-contianer .arrow-btns-container .left-arrow:hover, main .avatar-contianer .arrow-btns-container .left-arrow:focus,
+main .avatar-contianer .arrow-btns-container .right-arrow:hover,
+main .avatar-contianer .arrow-btns-container .right-arrow:focus {
+  background-color: #f4f4fc;
+}
+main .avatar-contianer .arrow-btns-container .left-arrow {
+  background: url(../images/icon-prev.svg) no-repeat center;
+}
+main .avatar-contianer .arrow-btns-container .right-arrow {
+  background: url(../images/icon-next.svg) no-repeat center;
+}
+main blockquote {
+  /*
+    quote
+  */
+  /*
+    block quote
+  */
+}
+main blockquote p {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+}
+main blockquote cite {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  /*
+    block quote
+  */
 }/*# sourceMappingURL=main.css.map */
