@@ -1,0 +1,18 @@
+main {
+  max-width: 1440px;
+  min-width: 375px;
+  max-height: 800px;
+  min-height: 667px;
+  position: relative;
+  background: url(../images/pattern-bg.svg) no-repeat;
+  background-size: 100%;
+  background-position: center top 17%;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+
+  //   width: 326px;
+  //   height: 307px;
+  // }
+}

@@ -8,6 +8,32 @@
   font-family: "Inter", sans-serif;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 body {
-  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1440px;
+  min-width: 375px;
+  max-height: 800px;
+  min-height: 667px;
+  position: relative;
+  background: url(../images/pattern-bg.svg) no-repeat;
+  background-size: 100%;
+  background-position: center top 17%;
 }/*# sourceMappingURL=main.css.map */
