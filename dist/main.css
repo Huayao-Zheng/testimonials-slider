@@ -101,7 +101,7 @@ main .avatar-contianer {
     height: 540px;
   }
 }
-main .avatar-contianer img {
+main .avatar-contianer .avatar {
   border-radius: 5px;
 }
 main .avatar-contianer .arrow-btns-container {
