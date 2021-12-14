@@ -8,28 +8,47 @@ main {
   min-height: 667px;
   position: relative;
   background: url(../images/pattern-bg.svg) no-repeat;
-  background-size: 100%;
-  background-position: center top 17%;
+  background-size: 87%;
+  background-position: center top 7%;
+  padding: 54px 32px 75px 32px;
+
+  /*
+    middle quote img for decoration
+  */
+  &::before {
+    content: '';
+    position: absolute;
+    background: url(../images/pattern-quotes.svg) no-repeat center/cover;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 50px;
+  }
+
+  /*
+    bottom pattern curve for decoration
+  */
+  &::after {
+    content: '';
+    position: absolute;
+    background: url(../images/pattern-curve.svg) no-repeat center/cover;
+    bottom: 0;
+    left: 0;
+    width: 285px;
+    height: 72px;
+  }
 
   /*
       avatar container
   */
   .avatar-contianer {
-    display: flex;
-    justify-content: center;
-    padding-top: 54px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    margin-bottom: 52px;
-
-    /*
-      avatar img
-    */
-    &::before {
-      content: '';
-      position: absolute;
-      width: 12px;
-      height: 12px;
-    }
+    width: 254px;
+    height: 253px;
+    margin-bottom: 82px;
 
     /*
       slider-btns-container
@@ -76,6 +95,8 @@ main {
     block quote
   */
   blockquote {
+    text-align: center;
+    color: #202047;
     /*
       quote
     */
@@ -83,21 +104,30 @@ main {
       font-weight: 300;
       font-size: 18px;
       line-height: 24px;
+      margin-bottom: 19px;
     }
 
     /*
-      block quote
+      cited,
+      job title / position
     */
+    cite,
+    .job-title {
+      display: block;
+    }
+
     cite {
       font-style: normal;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 24px;
-      /*
-        block quote
-      */
-      .job-title {
-      }
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .job-title {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 20px;
+      color: #b9b9ce;
     }
   }
 }
