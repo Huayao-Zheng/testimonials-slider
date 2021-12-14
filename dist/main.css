@@ -229,4 +229,16 @@ main blockquote .job-title {
     font-size: 20px;
     line-height: 38px;
   }
+}
+
+img.avatar,
+blockquote {
+  opacity: 0;
+}
+
+img.avatar.active,
+blockquote.active {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }/*# sourceMappingURL=main.css.map */

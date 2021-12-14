@@ -4,6 +4,8 @@ const quote = document.querySelector('p');
 const saidBy = document.querySelector('cite');
 const position = document.querySelector('.job-title');
 const avatar = document.querySelector('.avatar');
+const avatarContainer = document.querySelector('.avatar-contianer');
+const blockquote = document.querySelector('blockquote');
 
 const slidesData = [
   {
@@ -19,6 +21,10 @@ const slidesData = [
     imgPath: 'images/image-john.jpg',
   },
 ];
+
+[avatar, blockquote].forEach((elm) => {
+  elm.classList.add('active');
+});
 
 let currentSlide = 0;
 
@@ -43,8 +49,17 @@ nextBtn.addEventListener('click', () => {
 });
 
 function setTestimonialContent() {
+  [avatar, blockquote].forEach((elm) => {
+    elm.classList.remove('active');
+  });
   quote.innerText = slidesData[currentSlide].quote;
   saidBy.innerText = slidesData[currentSlide].person;
   position.innerText = slidesData[currentSlide].position;
   avatar.src = slidesData[currentSlide].imgPath;
+
+  setTimeout(() => {
+    [avatar, blockquote].forEach((elm) => {
+      elm.classList.add('active');
+    });
+  }, 300);
 }
