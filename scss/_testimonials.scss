@@ -1,29 +1,30 @@
+@mixin mq {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
 /*
   main container
 */
 main {
-  max-width: 1440px;
-  min-width: 375px;
-  max-height: 800px;
-  min-height: 667px;
+  width: 375px;
+  height: 667px;
   position: relative;
   background: url(../images/pattern-bg.svg) no-repeat;
-  background-size: 87%;
+  background-size: 326px 307px;
   background-position: center top 7%;
   padding: 54px 32px 75px 32px;
 
-  /*
-    middle quote img for decoration
-  */
-  &::before {
-    content: '';
-    position: absolute;
-    background: url(../images/pattern-quotes.svg) no-repeat center/cover;
-    top: 55%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 50px;
+  @include mq() {
+    width: 1440px;
+    height: 800px;
+    padding: 0;
+    background-size: 697px 657px;
+    background-position: right 8.5% top 33%;
+    display: grid;
+    grid-template-columns: 165px 570px 65px 475px 1fr;
+    grid-template-rows: 111px 167px 1fr;
   }
 
   /*
@@ -37,6 +38,11 @@ main {
     left: 0;
     width: 285px;
     height: 72px;
+
+    @include mq() {
+      width: 610px;
+      height: 151px;
+    }
   }
 
   /*
@@ -49,6 +55,23 @@ main {
     width: 254px;
     height: 253px;
     margin-bottom: 82px;
+
+    box-shadow: 0px 40px 50px -30px rgba(36, 36, 113, 0.495001);
+
+    @include mq() {
+      grid-column: 3 / 5;
+      grid-row: 2;
+      margin: 0;
+      width: 100%;
+      height: 540px;
+    }
+
+    /*
+      avatar
+    */
+    img {
+      border-radius: 5px;
+    }
 
     /*
       slider-btns-container
@@ -66,6 +89,12 @@ main {
       box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
       display: flex;
       overflow: hidden;
+
+      @include mq() {
+        width: 112px;
+        height: 56px;
+        left: 22%;
+      }
 
       /*
         left arrow & right arrow
@@ -97,6 +126,35 @@ main {
   blockquote {
     text-align: center;
     color: #202047;
+    position: relative;
+
+    @include mq() {
+      grid-column: 2 / 4;
+      grid-row: 3 / 4;
+      z-index: 100;
+      text-align: left;
+    }
+
+    /*
+      quote img for decoration
+    */
+    &::before {
+      content: '';
+      position: absolute;
+      background: url(../images/pattern-quotes.svg) no-repeat center/cover;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 50px;
+
+      @include mq() {
+        width: 120px;
+        height: 100px;
+        left: 25%;
+      }
+    }
+
     /*
       quote
     */
@@ -105,22 +163,24 @@ main {
       font-size: 18px;
       line-height: 24px;
       margin-bottom: 19px;
+
+      @include mq() {
+        font-size: 32px;
+        line-height: 44px;
+        margin-bottom: 32px;
+      }
     }
 
     /*
       cited,
       job title / position
     */
-    cite,
-    .job-title {
-      display: block;
-    }
-
     cite {
       font-style: normal;
       font-weight: 700;
       font-size: 15px;
       line-height: 20px;
+      margin-right: 10px;
     }
 
     .job-title {
@@ -128,6 +188,17 @@ main {
       font-size: 15px;
       line-height: 20px;
       color: #b9b9ce;
+    }
+
+    cite,
+    .job-title {
+      display: block;
+
+      @include mq() {
+        display: inline-block;
+        font-size: 20px;
+        line-height: 38px;
+      }
     }
   }
 }

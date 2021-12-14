@@ -32,18 +32,13 @@ body {
   main container
 */
 main {
-  max-width: 1440px;
-  min-width: 375px;
-  max-height: 800px;
-  min-height: 667px;
+  width: 375px;
+  height: 667px;
   position: relative;
   background: url(../images/pattern-bg.svg) no-repeat;
-  background-size: 87%;
+  background-size: 326px 307px;
   background-position: center top 7%;
   padding: 54px 32px 75px 32px;
-  /*
-    middle quote img for decoration
-  */
   /*
     bottom pattern curve for decoration
   */
@@ -54,16 +49,17 @@ main {
     block quote
   */
 }
-main::before {
-  content: "";
-  position: absolute;
-  background: url(../images/pattern-quotes.svg) no-repeat center/cover;
-  top: 55%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 60px;
-  height: 50px;
+@media (min-width: 1440px) {
+  main {
+    width: 1440px;
+    height: 800px;
+    padding: 0;
+    background-size: 697px 657px;
+    background-position: right 8.5% top 33%;
+    display: grid;
+    grid-template-columns: 165px 570px 65px 475px 1fr;
+    grid-template-rows: 111px 167px 1fr;
+  }
 }
 main::after {
   content: "";
@@ -74,6 +70,12 @@ main::after {
   width: 285px;
   height: 72px;
 }
+@media (min-width: 1440px) {
+  main::after {
+    width: 610px;
+    height: 151px;
+  }
+}
 main .avatar-contianer {
   margin-left: auto;
   margin-right: auto;
@@ -81,9 +83,26 @@ main .avatar-contianer {
   width: 254px;
   height: 253px;
   margin-bottom: 82px;
+  -webkit-box-shadow: 0px 40px 50px -30px rgba(36, 36, 113, 0.495001);
+          box-shadow: 0px 40px 50px -30px rgba(36, 36, 113, 0.495001);
+  /*
+    avatar
+  */
   /*
     slider-btns-container
   */
+}
+@media (min-width: 1440px) {
+  main .avatar-contianer {
+    grid-column: 3/5;
+    grid-row: 2;
+    margin: 0;
+    width: 100%;
+    height: 540px;
+  }
+}
+main .avatar-contianer img {
+  border-radius: 5px;
 }
 main .avatar-contianer .arrow-btns-container {
   content: "";
@@ -105,6 +124,13 @@ main .avatar-contianer .arrow-btns-container {
   /*
     left arrow & right arrow
   */
+}
+@media (min-width: 1440px) {
+  main .avatar-contianer .arrow-btns-container {
+    width: 112px;
+    height: 56px;
+    left: 22%;
+  }
 }
 main .avatar-contianer .arrow-btns-container .left-arrow,
 main .avatar-contianer .arrow-btns-container .right-arrow {
@@ -128,6 +154,10 @@ main .avatar-contianer .arrow-btns-container .right-arrow {
 main blockquote {
   text-align: center;
   color: #202047;
+  position: relative;
+  /*
+    quote img for decoration
+  */
   /*
     quote
   */
@@ -136,25 +166,67 @@ main blockquote {
     job title / position
   */
 }
+@media (min-width: 1440px) {
+  main blockquote {
+    grid-column: 2/4;
+    grid-row: 3/4;
+    z-index: 100;
+    text-align: left;
+  }
+}
+main blockquote::before {
+  content: "";
+  position: absolute;
+  background: url(../images/pattern-quotes.svg) no-repeat center/cover;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60px;
+  height: 50px;
+}
+@media (min-width: 1440px) {
+  main blockquote::before {
+    width: 120px;
+    height: 100px;
+    left: 25%;
+  }
+}
 main blockquote p {
   font-weight: 300;
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 19px;
 }
-main blockquote cite,
-main blockquote .job-title {
-  display: block;
+@media (min-width: 1440px) {
+  main blockquote p {
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 32px;
+  }
 }
 main blockquote cite {
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
   line-height: 20px;
+  margin-right: 10px;
 }
 main blockquote .job-title {
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
   color: #b9b9ce;
+}
+main blockquote cite,
+main blockquote .job-title {
+  display: block;
+}
+@media (min-width: 1440px) {
+  main blockquote cite,
+main blockquote .job-title {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 38px;
+  }
 }/*# sourceMappingURL=main.css.map */
